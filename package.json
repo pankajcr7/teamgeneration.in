@@ -2,7 +2,7 @@
   "name": "team-generation",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://[your-github-username].github.io/teamgeneration.in",
+  "homepage": "https://pankajcr7.github.io/teamgeneration.in",
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
