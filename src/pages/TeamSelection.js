@@ -43,6 +43,23 @@ const TeamSelection = () => {
   // Add team names state
   const [teamNames, setTeamNames] = useState([]);
 
+  // Load saved player stats from localStorage
+  const loadSavedPlayerStats = (playerName) => {
+    const savedStats = localStorage.getItem(`player_stats_${playerName}`);
+    if (savedStats) {
+      return JSON.parse(savedStats);
+    }
+    return {
+      avgPoints: '',
+      selectionPercentage: ''
+    };
+  };
+
+  // Save player stats to localStorage
+  const savePlayerStats = (playerName, stats) => {
+    localStorage.setItem(`player_stats_${playerName}`, JSON.stringify(stats));
+  };
+
   useEffect(() => {
     const matchData = localStorage.getItem(`match_${matchId}`);
     if (matchData) {
@@ -50,14 +67,15 @@ const TeamSelection = () => {
       // Set team names
       setTeamNames([data.team1Name, data.team2Name]);
       
-      const allPlayersList = [...data.team1Players, ...data.team2Players].map(player => ({
-        ...player,
-        id: player.name, // Ensure unique ID for each player
-        stats: {
-          avgPoints: '',
-          selectionPercentage: ''
-        }
-      }));
+      const allPlayersList = [...data.team1Players, ...data.team2Players].map(player => {
+        // Load saved stats for each player
+        const savedStats = loadSavedPlayerStats(player.name);
+        return {
+          ...player,
+          id: player.name,
+          stats: savedStats
+        };
+      });
       
       setAllPlayers(allPlayersList);
     } else {
@@ -95,18 +113,22 @@ const TeamSelection = () => {
   // Function to handle individual player stat changes
   const handlePlayerStatChange = (playerId, statType, value) => {
     setAllPlayers(prevPlayers => {
-      return prevPlayers.map(player => {
+      const updatedPlayers = prevPlayers.map(player => {
         if (player.id === playerId) {
+          const updatedStats = {
+            ...player.stats,
+            [statType]: value
+          };
+          // Save stats to localStorage whenever they change
+          savePlayerStats(player.name, updatedStats);
           return {
             ...player,
-            stats: {
-              ...player.stats,
-              [statType]: value
-            }
+            stats: updatedStats
           };
         }
-        return {...player};
+        return player;
       });
+      return updatedPlayers;
     });
   };
 
