@@ -1,0 +1,71 @@
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  cursor: pointer;
+  color: #563d7c;
+}
+
+#side_bar {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+#side_bar:hover {
+  color: #563d7c;
+  background-color: #f8f9fa;
+}
+
+#side_bar svg {
+  margin-right: 10px;
+}
+
+.first-nav {
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.top-fix-one {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.tg-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,230 @@
+.team-preview {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.cricket-field {
+  background: linear-gradient(to bottom, #4CAF50, #388E3C);
+  border-radius: 12px;
+  position: relative;
+  min-height: min(90vh, 800px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #2E7D32;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.players-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 5px;
+}
+
+/* Wicket Keeper - Top */
+.wicket-keeper-section {
+  flex: 0 0 auto;
+  margin-top: 10px;
+}
+
+.wicket-keeper-section .players-container {
+  justify-content: center;
+}
+
+/* Batsmen - Second Row */
+.batsman-section {
+  flex: 0 0 auto;
+  margin: 10px 0;
+}
+
+.batsman-section .players-container {
+  justify-content: space-evenly;
+  max-width: 100%;
+}
+
+/* All-rounders - Third Row */
+.all-rounder-section {
+  flex: 0 0 auto;
+  margin: 10px 0;
+}
+
+.all-rounder-section .players-container {
+  justify-content: space-evenly;
+  max-width: 100%;
+}
+
+/* Bowlers - Bottom Row */
+.bowler-section {
+  flex: 0 0 auto;
+  margin-bottom: 10px;
+}
+
+.bowler-section .players-container {
+  justify-content: space-evenly;
+  max-width: 100%;
+}
+
+.player-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(20% - 20px);
+  min-width: 85px;
+  max-width: 120px;
+  transition: transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  margin: 0;
+}
+
+.player-card.team-a {
+  background: linear-gradient(135deg, #ff8a00, #ff6b00);
+  color: white;
+}
+
+.player-card.team-b {
+  background: linear-gradient(135deg, #0088ff, #0066cc);
+  color: white;
+}
+
+.player-icon {
+  font-size: 18px;
+  margin-bottom: 4px;
+}
+
+.player-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.captain-indicator {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ffd700;
+  color: #37003c;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.vice-captain-indicator {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #00ff87;
+  color: #37003c;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 11px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .team-preview {
+    padding: 10px;
+  }
+
+  .cricket-field {
+    padding: 20px 15px;
+    min-height: min(95vh, 600px);
+    gap: 15px;
+  }
+
+  .section {
+    padding: 5px 0;
+  }
+
+  .players-container {
+    gap: 10px;
+  }
+
+  .player-card {
+    width: calc(25% - 15px);
+    min-width: 70px;
+    max-width: 100px;
+    padding: 6px;
+  }
+
+  .player-name {
+    font-size: 0.75rem;
+  }
+
+  .player-icon {
+    font-size: 16px;
+  }
+
+  .captain-indicator,
+  .vice-captain-indicator {
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    top: -5px;
+    right: -5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cricket-field {
+    padding: 15px 10px;
+    min-height: min(95vh, 500px);
+    gap: 10px;
+  }
+
+  .player-card {
+    width: calc(33.33% - 10px);
+    min-width: 60px;
+    max-width: 90px;
+    padding: 4px;
+  }
+
+  .player-name {
+    font-size: 0.7rem;
+  }
+
+  .players-container {
+    gap: 8px;
+  }
+}

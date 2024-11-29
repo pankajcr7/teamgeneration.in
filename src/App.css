@@ -1,0 +1,104 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#side_bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  background-color: transparent;
+}
+
+#side_bar:hover {
+  background-color: #f8f9fa;
+}
+
+.first-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  z-index: 999;
+  padding: 0 15px;
+}
+
+.tg-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border-top: 1px solid #dee2e6;
+  padding: 10px 0;
+  z-index: 999;
+}
+
+.sport-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.sport-icon span {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+.sport-icon-active {
+  background-color: #f8f9fa;
+}
+
+.sport-icon-active span {
+  color: #563d7c;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
