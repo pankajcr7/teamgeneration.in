@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/teamgeneration.in/static/css/main.e2bdb8a1.css",
+    "main.js": "/teamgeneration.in/static/js/main.264db4f0.js",
+    "index.html": "/teamgeneration.in/index.html",
+    "main.e2bdb8a1.css.map": "/teamgeneration.in/static/css/main.e2bdb8a1.css.map",
+    "main.264db4f0.js.map": "/teamgeneration.in/static/js/main.264db4f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e2bdb8a1.css",
+    "static/js/main.264db4f0.js"
+  ]
+}
